@@ -1,17 +1,1 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Высота на полный экран */
-    margin: 0; /* Убираем отступы */
-    background-color: #f0f0f0; /* Цвет фона */
-}
 
-.container {
-    text-align: center;
-}
-
-img {
-    max-width: 100%; /* Ограничиваем максимальную ширину */
-    height: auto; /* Сохраняем пропорции */
-}
