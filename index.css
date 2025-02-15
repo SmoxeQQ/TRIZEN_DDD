@@ -1,1 +1,32 @@
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Высота на полный экран */
+    margin: 0; /* Убираем отступы */
+    background-color: #f0f0f0; /* Цвет фона */
+}
+
+.container {
+    text-align: center;
+    overflow: auto; /* Позволяет прокручивать содержимое */
+    max-width: 100%; /* Ограничиваем максимальную ширину контейнера */
+    height: 100%; /* Высота контейнера на полный экран */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+img {
+    max-width: 100%; /* Ограничиваем максимальную ширину */
+    height: auto; /* Сохраняем пропорции */
+    transition: transform 0.2s; /* Плавный переход для масштабирования */
+}
+
+/* Стили для портретной ориентации */
+@media (orientation: portrait) {
+    img {
+        transform: scale(0.5); /* Уменьшаем масштаб в портретной ориентации */
+    }
+}
