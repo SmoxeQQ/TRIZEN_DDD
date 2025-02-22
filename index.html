@@ -1,74 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Случайное изображение и музыка</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        audio {
-            margin-top: 20px;
-        }
-    </style>
+    <title></title>
 </head>
 <body>
-    <img id="randomImage" src="" alt="Случайное изображение">
-    <audio id="randomAudio" controls autoplay>
-        <source src="" id="audioSource" type="audio/mpeg">
-        Ваш браузер не поддерживает элемент audio.
-    </audio>
-    
-    <script>
-        // Массив с ссылками на изображения
-        const images = [
-            "https://i.postimg.cc/rFQp5K6d/Frame-18-2x.png",
-            "https://i.postimg.cc/d0nwdfZ8/Frame-17-2x.png",
-            "https://i.postimg.cc/T2JKdT9P/Frame-1-1.png",
-            "https://i.postimg.cc/4dzmhGRB/Frame-15.png",
-            "https://i.postimg.cc/ZqsXJzyD/Frame-16.png"
-        ];
-
-        // Массив с ссылками на музыку
-        const music = [
-            "https://vgmsite.com/soundtracks/counter-strike-condition-zero-soundtrack/uhfymifw/14%20Secret%20War%20-%20Intro.mp3",
-            // Здесь вы можете добавить другие ссылки на музыку
-        ];
-
-        // Генерация случайного индекса для изображения
-        const randomImageIndex = Math.floor(Math.random() * images.length);
-        
-        // Генерация случайного индекса для музыки
-        const randomMusicIndex = Math.floor(Math.random() * music.length);
-        
-        // Получение элемента изображения по ID и установка случайного источника
-        const imgElement = document.getElementById('randomImage');
-        imgElement.src = images[randomImageIndex];
-
-        // Получение элемента audio и установка случайного источника
-        const audioElement = document.getElementById('randomAudio');
-        const audioSource = document.getElementById('audioSource');
-        audioSource.src = music[randomMusicIndex];
-
-        // Попытка авто-воспроизведения
-        audioElement.load();
-        audioElement.play().catch(function(error) {
-            console.log("Ошибка авто-воспроизведения:", error);
-            // Если авто-воспроизведение заблокировано пользователем, можно сообщить об этом.
-            alert("Для прослушивания музыки необходимо включить звук.");
-        });
-    </script>
+    <iframe src="https://vgmsite.com/soundtracks/counter-strike-condition-zero-soundtrack/uhfymifw/14%20Secret%20War%20-%20Intro.mp3" allow="autoplay" style="display:none" id="iframeAudio"> </iframe>
+</audio>
 </body>
 </html>
