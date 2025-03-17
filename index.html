@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Music</title>
+    <title>TR | Music</title>
+    <style>
+        #image-slider {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #image-slider img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        #image-slider img.active {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-    <iframe src="https://hub.scpslgame.com/images/3/35/The_Waiting_Game.mp3" allow="autoplay" style="display:none" id="iframeAudio"> </iframe>
-</audio>
+    <div id="image-slider">
+        <img src="https://www.imghippo.com/i/iojm5661gVI.png" class="active">
+        <img src="https://www.imghippo.com/i/IdZ6823fYo.png">
+        <img src="https://www.imghippo.com/i/JNO4662AUI.png">
+        <img src="https://www.imghippo.com/i/EXq9236Few.png">
+        <img src="https://www.imghippo.com/i/cXEo5317po.png">
+        <img src="https://www.imghippo.com/i/ibIP3169oM.png">
+        <img src="https://www.imghippo.com/i/mZd3154IAE.png">
+        <img src="https://www.imghippo.com/i/xhtn8600dg.png">
+        <img src="https://www.imghippo.com/i/etq5305IQ.png">
+        <img src="https://www.imghippo.com/i/NlWR4462pWY.png">
+    </div>
+
+    <iframe src="https://hub.scpslgame.com/images/3/35/The_Waiting_Game.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
+
+    <script>
+        const images = document.querySelectorAll('#image-slider img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000); // смена изображения каждые 3 секунды
+    </script>
 </body>
 </html>
